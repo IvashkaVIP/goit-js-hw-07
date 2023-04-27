@@ -1,5 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
+//import * as basicLightbox from "basiclightbox";
+
 
 const createImagesMarkup = (image) => {
     return image.map(({preview,original,description}) => {
@@ -31,8 +33,14 @@ function onGalleryContainerClick(evt) {
          return;
      }
     //const urlMainImage = evt.target.contains()
-    
-    console.log(evt.target.dataset.source);
+    const instance = basicLightbox.create(`
+    <img src="${evt.target.dataset.source}" width="800" height="600">
+    `);
+
+    instance.show();
+
+
+    // console.log(evt.target.dataset.source);
 }
 
 

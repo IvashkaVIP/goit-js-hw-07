@@ -1,7 +1,6 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-
 const createImagesMarkup = (image) => {
   return image
     .map(({ preview, original, description }) => {
@@ -18,18 +17,12 @@ const createImagesMarkup = (image) => {
 
 const galleryContainer = document.querySelector(".gallery");
 const imagesMarkup = createImagesMarkup(galleryItems);
-const galleryMarkup = galleryContainer.insertAdjacentHTML(
-  "beforeend",
-  imagesMarkup
-);
+galleryContainer.insertAdjacentHTML("beforeend", imagesMarkup);
 
- let lightbox = new SimpleLightbox(".gallery a", {
- });
+let lightbox = new SimpleLightbox(".gallery a", {});
 const lightboxOptions = lightbox.options;
+lightboxOptions.captions = true;
+lightboxOptions.captionDelay = 250;
+lightboxOptions.captionsData = "alt";
 
- lightboxOptions.captions = true;
- lightboxOptions.captionDelay = 250;
- lightboxOptions.captionsData = 'alt';
-
-//console.log(lightbox);
-
+//console.log(lightbox.options);

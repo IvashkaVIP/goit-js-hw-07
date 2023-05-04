@@ -20,7 +20,8 @@ const imagesMarkup = createImagesMarkup(galleryItems);
 galleryContainer.insertAdjacentHTML("beforeend", imagesMarkup);
 
 let lightbox = new SimpleLightbox(".gallery a", { captionsData: "alt", captionDelay: "250" });
-const lightboxOptions = lightbox.options;
+
+// const lightboxOptions = lightbox.options;
 // lightboxOptions.captions = true;
 // lightboxOptions.captionDelay = 250;
 // lightboxOptions.captionsData = "alt";
